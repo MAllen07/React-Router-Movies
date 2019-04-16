@@ -37,7 +37,7 @@ function MovieDetails({ movie }) {
   const { id } = movie;
   return (
     <NavLink to={`/movies/${id}`}>
-      <MovieCard movie={movie} />
-    </NavLink>
+      <MovieCard movie={movie} />  </NavLink>
+   
   );
 }
