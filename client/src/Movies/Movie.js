@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import MovieList from "./MovieList";
+
 
 
 export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: []
     };
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
    
-    const id = MovieList.find(
-    Movie => `${Movie.id}` === this.props.match.params.MovieId
-
-    );
+    const { id } = this.props.match.params;
    this.fetchMovie(id);
   }
 
@@ -61,7 +58,7 @@ export default class Movie extends Component {
           </div>
           <h3>Actors</h3>
 
-          {stars.map(star => (
+          {stars.map (star => (
             <div key={star} className="movie-star">
               {star}
             </div>
